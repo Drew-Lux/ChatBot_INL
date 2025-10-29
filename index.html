@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatbase Assistant</title>
+    <style>
+      :root {
+        --primary-color: #1e88e5;
+        --background: #f3f6fb;
+        --card-bg: #ffffff;
+        --shadow: rgba(0, 0, 0, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        height: 100vh;
+        background: var(--background);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      }
+
+      .chat-container {
+        width: 100%;
+        max-width: 800px;
+        height: 90vh;
+        background: var(--card-bg);
+        border-radius: 20px;
+        box-shadow: 0 10px 25px var(--shadow);
+        overflow: hidden;
+        position: relative;
+      }
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .loading {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--card-bg);
+        z-index: 10;
+        font-size: 1.1rem;
+        color: #555;
+        font-weight: 500;
+      }
+
+      .spinner {
+        width: 20px;
+        height: 20px;
+        border: 3px solid #ddd;
+        border-top-color: var(--primary-color);
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+        margin-right: 10px;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chat-container">
+      <div class="loading" id="loading">
+        <div class="spinner"></div> Loading Chatbase Assistant...
+      </div>
+      <iframe
+        src="https://www.chatbase.co/chatbot-iframe/4hBt7IgKHpe6356BPKxPR"
+        allow="microphone; camera"
+        onload="document.getElementById('loading').style.display='none';"
+      ></iframe>
+    </div>
+  </body>
+</html>
+
